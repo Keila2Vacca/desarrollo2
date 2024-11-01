@@ -1,5 +1,5 @@
 ---
-const { title, favicon = "/favicon.svg"} = Astro.props;
+const { title, favicon = "/favicon.svg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,32 +8,47 @@ const { title, favicon = "/favicon.svg"} = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={favicon}>
+		<link rel="icon" type="image/svg+xml" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="w-full px-60 bg-slate-400">
-		<header class="bg-sky-300 h-20">
-
-		</header>
+	<body class="w-full px-40 bg-gray-400">
+		<header class="bg-sky-300 h-20"></header>
 		<menu class="bg-pink-300 flex items-center justify-center">
 			<li>
 				<a href="/" class="block px-3 hover:bg-white/25">Inicio </a>
 			</li>
 			<li>
-				<a href="/quienes-somos" class="block px-3 hover:bg-white/25">¿Quiénes somos? </a>
+				<a href="/quienes-somos" class="block px-3 hover:bg-white/25"
+					>¿Quiénes somos?
+				</a>
 			</li>
 			<li>
-				<a href="/organigrama" class="block px-3 hover:bg-white/25">Organigrama</a>
+				<a href="/organigrama" class="block px-3 hover:bg-white/25"
+					>Organigrama</a
+				>
 			</li>
 			<li>
-				<a href="/contacto" class="block px-3 hover:bg-white/25">Contacto </a>
+				<a href="/contacto" class="block px-3 hover:bg-white/25"
+					>Contacto
+				</a>
 			</li>
 			<li>
-				<a href="/noticias" class="block px-3 hover:bg-white/25">Noticias </a>
+				<a href="/noticias" class="block px-3 hover:bg-white/25"
+					>Noticias
+				</a>
 			</li>
 		</menu>
 		<slot />
 	</body>
 </html>
 
+<style is:global>
+	@font-face {
+		font-family: "myfont";
+		src: url('/fonts/RubikWetPaint-Regular.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+</style>

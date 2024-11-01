@@ -1,10 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
+
+ <!-- 
+ npm install @iconify-json/x 
+ x=nombre del paquete que se muestra en: 
+ name="x:nombre del icono"
+ -->
 
 <Layout title="Welcome.">
 	<h1  class="text-6xl pt-5 text-yellow-300 text-center font-bold font-serif">
-        Esta es la páguina principal
+        Esta es la página principal
     </h1>
+    <div class="my-custom-class">
+        Hola, el @apply sirve para aplicar tailwind dentro de una clase de css puro
+    </div>
+    <Icon name="mdi:tray-upload" size="30" class="text-violet-900"/>
+    <Icon name="line-md:cloud-up-twotone"  size="30" class="text-violet-900"/>
+
+    <span class="font-myfont italic rounded-xl px-2 py-1 bg-white text-red-600">
+        Hola, feliz 9/9
+    </span>
 </Layout>
+
+<style>
+    .my-custom-class{
+        @apply bg-green-300 text-black text-2xl my-5 text-center font-semibold 
+    }
+</style>
+
+
 
