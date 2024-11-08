@@ -1,34 +1,83 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
- <!-- 
+<!-- 
  npm install @iconify-json/x 
  x=nombre del paquete que se muestra en: 
  name="x:nombre del icono"
  -->
-
 <Layout title="Welcome.">
-	<h1  class="text-6xl pt-5 text-yellow-300 text-center font-bold font-serif">
+    <h1 class="text-6xl pt-5 text-yellow-300 text-center font-bold font-serif">
         Esta es la página principal
     </h1>
     <div class="my-custom-class">
-        Hola, el @apply sirve para aplicar tailwind dentro de una clase de css puro
+        Hola, el @apply sirve para aplicar tailwind dentro de una clase de css
+        puro
     </div>
-    <Icon name="mdi:tray-upload" size="30" class="text-violet-900"/>
-    <Icon name="line-md:cloud-up-twotone"  size="30" class="text-violet-900"/>
+    <Icon name="mdi:tray-upload" size="30" class="text-violet-900" />
+    <Icon name="line-md:cloud-up-twotone" size="30" class="text-violet-900" />
 
     <span class="font-myfont italic rounded-xl px-2 py-1 bg-white text-red-600">
         Hola, feliz 9/9
     </span>
+
+    <button
+        id="btn"
+        data-role="Admin"
+        class="bg-red-300 text-white px-3 rounded-xl">pinchar</button
+    >
+
+    <div class="embla">
+        <div class="embla__container">
+            <div class="embla__slide">Slide 1</div>
+            <div class="embla__slide">Slide 2</div>
+            <div class="embla__slide">Slide 3</div>
+        </div>
+    </div>
 </Layout>
 
 <style>
-    .my-custom-class{
-        @apply bg-green-300 text-black text-2xl my-5 text-center font-semibold 
+    .my-custom-class {
+        @apply bg-green-300 text-black text-2xl my-5 text-center font-semibold;
+    }
+    .embla {
+        overflow: hidden;
+    }
+    .embla__container {
+        display: flex;
+        max-width: 300px;
+    }
+    .embla__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        background-color: red;
     }
 </style>
+<!-- target es el elemento expecifoco y e elemento global
+ para acceder a data: e.target.dataset.role
+ para clases: e.target.classList -->
 
+ <!--const emblaApi = EmblaCarousel(emblaNode, options); -->
 
+ 
+<script>
+    import JSConfetti from "js-confetti";
+    import EmblaCarousel from "embla-carousel";
 
+    const jsConfetti = new JSConfetti();
+
+    const emblaNode = document.querySelector(".embla");
+    const options = { loop: false };
+    
+    
+
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", (e) => {
+        console.log("¡AYY!", e.target);
+        jsConfetti.addConfetti();
+    });
+    console.log(btn);
+
+</script>
