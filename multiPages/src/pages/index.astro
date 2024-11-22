@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
 ---
 
 <!-- 
@@ -9,38 +10,41 @@ import { Icon } from "astro-icon/components";
  name="x:nombre del icono"
  -->
 <Layout title="Welcome.">
-    <h1 class="text-6xl pt-5 text-yellow-300 text-center font-bold font-serif">
-        Esta es la página principal
-    </h1>
-    <div class="my-custom-class">
-        Hola, el @apply sirve para aplicar tailwind dentro de una clase de css
-        puro
-    </div>
-    <Icon name="mdi:tray-upload" size="30" class="text-violet-900" />
-    <Icon name="line-md:cloud-up-twotone" size="30" class="text-violet-900" />
-
-    <span class="font-myfont italic rounded-xl px-2 py-1 bg-white text-red-600">
-        Hola, feliz 9/9
-    </span>
-
-    <button
-        id="btn"
-        data-role="Admin"
-        class="bg-red-300 text-white px-3 rounded-xl">pinchar</button
-    >
-
-    <div class="embla">
-        <div class="embla__container">
-            <div class="embla__slide">Slide 1</div>
-            <div class="embla__slide">Slide 2</div>
-            <div class="embla__slide">Slide 3</div>
+    <div class="flex items-center flex-col gap-5">
+        <h1 class="text-6xl pt-5 text-center font-bold font-serif">
+            Esta es la página principal
+        </h1>
+        <div class="my-custom-class">
+            Hola, el @apply sirve para aplicar tailwind dentro de una clase de css
+            puro
+        </div>
+        <Icon name="mdi:tray-upload" size="30" class="text-violet-900" />
+        <Icon name="line-md:cloud-up-twotone" size="30" class="text-violet-900" />
+    
+        <span class="font-myfont italic rounded-xl px-2 py-1 bg-white text-red-600">
+            Hola, feliz 9/9
+        </span>
+    
+        <button
+            id="btn"
+            data-role="Admin"
+            class="bg-red-300 text-white px-3 rounded-xl">pinchar</button
+        >
+    
+        <div class="embla">
+            <div class="embla__container">
+                <div class="embla__slide">Slide 1</div>
+                <div class="embla__slide">Slide 2</div>
+                <div class="embla__slide">Slide 3</div>
+            </div>
         </div>
     </div>
+    
 </Layout>
 
 <style>
     .my-custom-class {
-        @apply bg-green-300 text-black text-2xl my-5 text-center font-semibold;
+        @apply bg-green-300 text-black text-2xl my-5 text-center font-semibold py-2 px-4 rounded-md;
     }
     .embla {
         overflow: hidden;
